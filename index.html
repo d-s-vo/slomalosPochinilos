@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+    <link href="./dist/output.css" rel="stylesheet">
+    <link rel="icon" href="../favicon.ico">
+</head>
+<body>
+    <header class="w-full h-20 flex bg-[#b2f2bb] top-0">
+        <div class="group/sub_item relative flex hover:bg-[#eebefa] hover:text-black">
+            <div class="header__item item">item!</div>
+            <div class="absolute top-full left-0 bg-[#eebefa] invisible group-hover/sub_item:visible">
+                <div class="item__sub-item sub-item">sub item</div>
+                <div class="group/item__img relative flex hover:bg-[#ffa94d] hover:text-black">
+                    <div class="item__sub-item sub-item">sub item!</div> 
+                    <div class="absolute -mt-10 translate-x-40 invisible group-hover/item__img:visible">
+                        <img src="https://placehold.co/100x100/orange/white?text=O,+privet" alt="" >
+                    </div>
+                </div>
+
+                <div class="item__sub-item sub-item">sub item</div>
+                <div class="item__sub-item sub-item">sub item</div>
+            </div>
+        </div>
+        <div class="header__item item">item</div>
+        <div class="header__item item">item</div>
+        <div class="header__item item ">item</div>
+    </header>
+    <div class="flex grow justify-between mx-14 my-5">
+        <div><img src="https://placehold.co/700x1000"></div>
+        <div class="relative flex flex-col justify-between">
+            <div id="app" class="top-0 sticky w-auto bg-[#b2f2bb]"></div>
+            <div class="bottom-0 sticky"><img src="https://placehold.co/600x200"></div>
+        </div>
+    </div>
+    <footer class="w-full h-20 bg-[#40c057] bottom-0"></footer>
+</body>
+<script type="module" src="/src/main.js"></script>
+</html>
+
+
+
+<!-- <script setup>
+import { reactive, computed } from 'vue'
+
+const review = reactive ({
+    author: '',
+    text: '',
+    stars: null,
+    photo: null
+})
+
+const stars = [1,2,3,4,5];
+
+const loadPhoto = (e) => {
+   const file = e.target.files[0];
+   review.photo = file;
+}
+
+const previwePhoto = computed(() => {
+  if(review.photo) {
+   return URL.createObjectURL(review.photo);
+  }  
+});
+</script>
+
+<template>
+ <form 
+  @submit.prevent.stop=""
+  style="display:flex; flex-direction:column; width: 250px; padding: 2rem">
+    <input 
+      type="text"
+      v-model= "review.author"
+      placeholder="Введите имя"
+      style="margin-bottom: 1rem; text-align: center; "
+    >
+
+    <textarea 
+      rows="4"
+      v-model="review.text"
+      placeholder="Ваш отзыв."
+    ></textarea>  
+
+    <h3 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; margin-bottom: 3px;">Ваша оценка</h3>
+    <div 
+      v-for="star in stars"
+      :key="star"
+    >
+      <input
+          v-model="review.stars" 
+          :id="`star${star}`"
+          :true-value="star"
+          :false-value="null" 
+          type="checkbox">
+      <label :for="`star${star}`">{{star}}</label>
+    </div>
+
+    <div class="author__photo" style="margin-top: 1rem;">
+        <label style="font-size: 18px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; width: 50px; margin-bottom: 10px;">Прикрепить изображение</label>
+        <input 
+          type="file"
+          accept="image/*"
+          @change="loadPhoto">
+          <img :src="previwePhoto" style="width:100px;">
+    </div>
+
+    <button 
+      style="margin-top:1rem; width:10rem; box-shadow: inset;"
+    > Отправить
+    </button>
+ </form>
+</template> -->
